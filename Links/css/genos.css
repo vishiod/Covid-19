@@ -1,0 +1,377 @@
+html {
+  scrollbar-face-color: #646464;
+  scrollbar-base-color: #646464;
+  scrollbar-3dlight-color: #646464;
+  scrollbar-highlight-color: #646464;
+  scrollbar-track-color: #000;
+  scrollbar-arrow-color: #000;
+  scrollbar-shadow-color: #646464;
+  scrollbar-dark-shadow-color: #646464;
+  scrollbar-gutter: [ auto | [ stable | always] && both? && force?]
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  /*background-color: #666;*/
+  background-color: #646464;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #646464;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #000;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #646464;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #646464;
+}
+
+::-webkit-resizer {
+  background-color: #666;
+}
+
+body {
+  text-align: center;
+  background-color: var(--color-secondary);
+  color: var(--font-color);
+  font-family: poppins;
+  margin: 10px 0 20px 0;
+  padding: 0;
+  -webkit-animation: transition 2s ease;
+  animation: transition 2s ease;
+}
+
+#box {
+  padding: 0 20px 0 15px;
+  text-align: justify;
+  margin: 0 auto 20px auto;
+  border: 7px solid #6F00FF;
+  width: 75vw;
+  background-color: var(--box-color);
+  color: black;
+  border-radius: 15px;
+}
+
+h2 {
+  border-bottom: 2px solid lightgrey;
+}
+
+li {
+  margin: 10px 0;
+}
+
+b {
+  font-size: 16px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00FFFF;
+  text-decoration: underline;
+}
+
+@-webkit-keyframes transition {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes transition {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+.display {
+  text-align: justify;
+  display: flex;
+  align-items: center;
+}
+
+.mohit {
+  border: 7px solid #6F00FF;
+  padding: 0 10px;
+  color: black;
+  margin: 30px 18vw 0 13vw;
+  width: 25vw;
+  height: 300px;
+  background-color: var(--box-color);
+  border-radius: 15px;
+  letter-spacing: 2px;
+}
+
+.vishal {
+  border: 7px solid #6F00FF;
+  padding: 0 10px;
+  color: black;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  width: 25vw;
+  height: 300px;
+  background-color: var(--box-color);
+  border-radius: 15px;
+}
+
+#team {
+  border: none;
+  text-underline-position: under;
+}
+
+@media screen and (max-width:800px) {
+  .display {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mohit {
+    width: 45vw;
+    margin-left: 18vw;
+  }
+
+  .vishal {
+    width: 45vw;
+  }
+}
+
+
+i {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#navigation {
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  top: -10px;
+}
+
+.india {
+  font-size: 9px;
+  margin-top: -7px;
+  color: rgb(65, 97, 197);
+  font-weight: bold;
+}
+
+@media screen and (max-width:800px) {
+  #left_navbar {
+    width: 70px;
+    font-size: 65%;
+  }
+}
+
+.openbtn {
+  z-index: 1;
+  font-family: cursive;
+  padding-top: 2%;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: var(--font-color);
+  padding: 1% 0.7%;
+  border: none;
+  text-align: left;
+}
+
+.menuIcon {
+  width: 35px;
+}
+
+.theme-light {
+  --color-primary: #0060df;
+  --color-secondary: #B58ECC;
+  /* --color-secondary: #cccce3; */
+  --color-accent: #fd6f53;
+  --font-color: #000000;
+  --sidepane-background: #B58ECC;
+  --box-color: lightgrey;
+  /* --background-color: #eec0c6;
+  --background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%); */
+}
+
+.theme-dark {
+  --color-primary: #17ed90;
+  --color-secondary: rgb(24, 24, 35);
+  --sidepane-background: rgb(24, 24, 35);
+  --color-accent: #12cdea;
+  --font-color: #ffffff;
+  --box-color: white;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  background: var(--sidepane-background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container h1 {
+  color: var(--font-color);
+  font-family: sans-serif;
+}
+
+.container button {
+  color: var(--font-color);
+  background: var(--sidepane-background);
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+}
+
+#heading {
+  text-align: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  /* height: 34px; */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  right: 10px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(24px);
+  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*Sidebar Things*/
+.sidebar {
+  display: block;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0%;
+  background-color: var(--sidepane-background);
+  opacity: 1;
+  overflow-x: hidden;
+  padding-top: 5%;
+  transition: 0.8s;
+}
+
+/* The sidebar links */
+.sidebar a {
+  /* padding: 10% 10% 10% 10%; */
+  text-decoration: none;
+  font-family: cursive;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--font-color);
+  display: block;
+  transition: 0.8s;
+}
+
+/*.sidebar a:hover {
+  left: 0;
+}*/
+.sidebar img {
+  margin-left: 9%;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 2%;
+  text-decoration: none;
+  padding-top: 5%;
+}
+ .fa.fa-bars.fa-2x {
+   margin:10px 0 0 10px;
+   color: grey;
+ }
