@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Covid-19</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="./images/covid19-1600x900.jpg "/>
+  <link rel="stylesheet" href="./css/garou.css">
+</head>
+
+<body onload="calcToday();">
+  <div class="myDOM">
+    <div id="mySidebar" class="sidebar">
+      <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav(),revertOpacity();"> -->
+      <a href="#">
+        <i class="fa fa-times fa-2x" aria-hidden="true" onclick="closeNav(),revertOpacity();" style="color:grey;"></i>
+      </a>
+      <a href="#" class="">
+        <p><i style="color:grey" class="fa fa-home fa-2x" aria-hidden="true"></i>
+      </a>
+      <br>
+      <a href="web_tech_info_page.html" class="" target="_blank">
+        <i style="color:grey" class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+
+      </a>
+      <br>
+      <a href="login.html" target="_blank">
+        <i class="fa fa-rocket fa-2x" aria-hidden="true" style="color:grey"></i>
+
+      </a>
+      <a href="#" class="">
+        <div class="container">
+          <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </a>
+
+    </div>
+    <button class="openbtn" onclick="openNav(),changeOpacity();">
+      <img src="./images/menu-icon-white-png-11.jpg" alt="" class="menuIcon">
+    </button>
+    <div id="main" class="grid1">
+      <div id="main1" class="grid">
+        <div id="container" class="container">
+          <div id="scene" data-hover-only="true" data-relative-input="true" class="scene border">
+            <div data-depth="1.00"><img src="images/layer1.png" class="parallaxImages"></div>
+            <div data-depth="0.80"><img src="images/layer2.png" class="parallaxImages"></div>
+            <div data-depth="0.60"><img src="images/layer3.png" class="parallaxImages"></div>
+            <div data-depth="0.40"><img src="images/layer4.png" class="parallaxImages"></div>
+            <div data-depth="0.20"><img src="images/layer5.png" class="parallaxImages"></div>
+            <div data-depth="0.00"><img src="images/layer6.png" class="parallaxImages"></div>
+          </div>
+
+        </div>
+        <div class="tp2">
+          <h1 class="Heading">Covid In Check</h1>
+          <div class="sub-3"><span class="sub-2">India</span> <br> Last Updated on <span id="dateSelected" ></span> </div>
+          <div class="sub-4">Tested <br> <span id="testedTillDateSelected" class="count">0</span><br></div>
+        </div>
+
+      </div>
+      <br><br><br> <br>
+      <div class="data-stats">
+        <div id="content" class="in-line">
+          <div id="confirmed">
+            <div class="data">
+              <h2>Confirmed</h2>
+              +cases <br>
+              <p class="count" id="totalConfirmedIndia">0</p><br>
+            </div>
+          </div>
+          <div id="active">
+            <div class="data">
+              <h2>Active</h2>
+              +cases <br>
+              <p class="count" id="totalActiveIndia">0</p><br>
+            </div>
+          </div>
+          <div id="recovered">
+            <div class="data">
+              <h2>Recovered</h2>
+              +cases <br>
+              <p class="count" id="totalRecoveredIndia">0</p><br>
+            </div>
+          </div>
+          <div id="deceased">
+            <div class="data">
+              <h2>Deceased</h2>
+              +cases <br>
+              <p class="count" id="totalDeceasedIndia">0</p><br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <div class="date">
+        <input type="date" id="datefield" name="trip-start"  min="2020-05-01" >
+        <button type="button" name="button" onclick="getData();">Update Table </button>
+      </div>
+      <br>
+      <div class="myTable" >
+        <table class="table table-striped" id="myTable">
+          <thead>
+            <tr>
+              <th>State/UT</th>
+              <th>Confirmed</th>
+              <th>Active</th>
+              <th>Recovered</th>
+              <th>Deceased</th>
+              <th>Tested</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="filterable-cell">Andhra Pradesh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Arunachal Pradesh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Assam</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Bihar</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Chhattisgarh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Goa</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Gujarat</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Haryana</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Himachal Pradesh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Jharkhand</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Karnataka</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Kerala</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Madhya Pradesh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Maharashtra</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Manipur</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Meghalaya</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Mizoram</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Nagaland</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Odisha</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Punjab</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Rajasthan</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Sikkim</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Tamil Nadu</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Telangana</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Tripura</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Uttar Pradesh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Uttarakhand</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">West Bengal</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+
+            <tr>
+              <td class="filterable-cell">Andaman and Nicobar Islands</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Chandigarh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Dadra and Nagar Haveli and Daman and Diu</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Delhi</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Jammu and Kashmir</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Ladakh</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">Puducherry</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+            <tr>
+              <td class="filterable-cell">India</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+              <td class="filterable-cell count">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer class="atFoot"> <br> Mohit Gupta 19BIT055 <br> Vishal Sharma 19BIT0124 <br>   </footer>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js"></script>
+  <script src="https://use.fontawesome.com/a73e2c8479.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" integrity="sha512-/6TZODGjYL7M8qb7P6SflJB/nTGE79ed1RfJk3dfm/Ib6JwCT4+tOfrrseEHhxkIhwG8jCl+io6eaiWLS/UX1w==" crossorigin="anonymous"></script>
+  <script>
+
+  var scene = document.getElementById('scene');
+  var parallax = new Parallax(scene);
+
+  </script>
+  <script src="./scripts/parfum.js"></script>
+</body>
+
+</html>
