@@ -2,7 +2,7 @@ Step 1: Install XAMPP in your PC from https://www.apachefriends.org/de/download.
 
 Step 2: Clone the covid files from GitHub in "C:\xampp\htdocs\test"
 
-Step 3: Run localhost with the help of XAMPP and then  open "http://localhost" where you will fin the covid files that were stored in the above directory
+Step 3: Run localhost with the help of XAMPP and then  open "http://localhost" where you will find the covid files that were stored in the above directory
 
 Step 4: Install NodeJs and go to the folder where all these files were kept and then run npm install
 
