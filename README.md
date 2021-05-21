@@ -4,6 +4,8 @@ Step 2: Clone the covid files from GitHub in "C:\xampp\htdocs\test"
 
 Step 3: Run localhost with the help of XAMPP and then  open "http://localhost" where you will find the covid files that were stored in the above directory
 
+Step 3.5: GO to the directory where **_package.json_** is  kept and run **_npm install_** command in cmd there.
+
 Step 4: Install NodeJs and go to the folder where all these files were kept and then run npm install
 
 Step 5: After all files are installed run this "node index.js" command
